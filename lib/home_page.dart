@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
           width: double.infinity,
           height: double.infinity,
           child: Container(
-            color: Colors.grey[400],
+            color: Colors.grey[300],
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -146,20 +146,20 @@ class _HomePageState extends State<HomePage> {
                       width: 320,
                       height: 120,
                       decoration: BoxDecoration(
-                        color: Colors.grey[400],
+                        color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(2, 2),
-                            color: Colors.grey.shade600,
-                            blurRadius: 10,
-                            spreadRadius: 0.5,
+                            offset: Offset(4, 4),
+                            color: Colors.grey.shade500,
+                            blurRadius: 15,
+                            spreadRadius: 1,
                           ),
                           BoxShadow(
-                            offset: Offset(-2, -2),
-                            color: Colors.grey.shade50,
-                            blurRadius: 10,
-                            spreadRadius: 0.5,
+                            offset: Offset(-4, -4),
+                            color: Colors.white,
+                            blurRadius: 15,
+                            spreadRadius: 1,
                           ),
                         ],
                       ),
@@ -258,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                                     onPressed: () {},
                                     child: Container(
                                       padding:
-                                          EdgeInsets.fromLTRB(10, 8, 10, 8),
+                                          EdgeInsets.fromLTRB(12, 10, 12, 10),
                                       child: Text(
                                         "Calcular",
                                         style: GoogleFonts.lato(
