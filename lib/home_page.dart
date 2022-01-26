@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:teste_escribo/form_number.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:teste_escribo/form_number_and_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -33,6 +32,104 @@ class HomePage extends StatelessWidget {
                 ),
                 Expanded(
                   flex: 2,
+                  child: Center(
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(5, 5, 5, 10),
+                      alignment: Alignment.topCenter,
+                      child: Wrap(
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.fromLTRB(0, 2, 0, 2),
+                                width: 300,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Aplicativo Web: SomaModulo3e5",
+                                  style: GoogleFonts.lato(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Aplicativo que recebe um número inteiro e positivo através da caixa de texto abaixo e retorna o somatório de todos os valores inteiros divisíveis por 3 ou 5 que sejam inferiores ao número informado",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(5, 15, 5, 3),
+                                width: 300,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Instruções: ",
+                                  style: GoogleFonts.lato(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "* Não é permitido ponto(.) ou vírgula(,) entre os números",
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black87,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "* Não é permitido nenhum caractere especial",
+                                  textAlign: TextAlign.start,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black87,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "* Somente números INTEIROS e POSITIVOS serão aceitos",
+                                  textAlign: TextAlign.start,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black87,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
                   child: Center(
                     child: Container(
                       margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
@@ -78,19 +175,17 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Column(
                     children: [
                       Center(
                         child: Container(
-                          child: Text("Digite o número desejado"),
+                          child: Text("Digite um número entre 0 e 999"),
                         ),
                       ),
                       Center(
                         child: Container(
                           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                          width: 100,
-                          height: 50,
                           child: FormNumber(),
                         ),
                       ),
