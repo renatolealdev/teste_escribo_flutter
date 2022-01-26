@@ -262,12 +262,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Center(
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                          child: Container(
-                            width: 160,
-                            child: Column(
-                              children: [
-                                Form(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 150,
+                                child: Form(
                                   key: _formKey,
                                   child: TextFormField(
                                     validator: (value) {
@@ -291,33 +291,33 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.black87,
-                                    ),
-                                    onPressed: () {
-                                      if (_formKey.currentState!.validate()) {
-                                        setState(() {
-                                          return result = receiveNumberAndCheck(
-                                              numInfo: numInformated);
-                                        });
-                                      }
-                                    },
-                                    child: Container(
-                                      padding:
-                                          EdgeInsets.fromLTRB(12, 10, 12, 10),
-                                      child: Text(
-                                        "Calcular",
-                                        style: GoogleFonts.lato(
-                                            color: Colors.white70),
-                                      ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.black87,
+                                  ),
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      setState(() {
+                                        return result = receiveNumberAndCheck(
+                                            numInfo: numInformated);
+                                      });
+                                    }
+                                  },
+                                  child: Container(
+                                    padding:
+                                        EdgeInsets.fromLTRB(12, 10, 12, 10),
+                                    child: Text(
+                                      "Calcular",
+                                      style: GoogleFonts.lato(
+                                          color: Colors.white70),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
