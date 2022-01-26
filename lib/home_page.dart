@@ -257,6 +257,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Center(
                         child: Container(
+                          margin: EdgeInsets.only(bottom: 8),
                           child: Text("Digite um número entre 0 e 999"),
                         ),
                       ),
@@ -264,6 +265,7 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 width: 150,
@@ -276,7 +278,7 @@ class _HomePageState extends State<HomePage> {
                                       return null;
                                     },
                                     onChanged: (value) => numInformated = value,
-                                    autofocus: true,
+                                    autofocus: false,
                                     decoration: InputDecoration(
                                       filled: true,
                                       fillColor: Colors.white38,
@@ -293,6 +295,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
+                                margin: EdgeInsets.only(left: 10),
                                 padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
