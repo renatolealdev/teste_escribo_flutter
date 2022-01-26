@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'controller/receive_number_and_check.dart';
 
 class HomePage extends StatefulWidget {
@@ -41,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 4,
                   child: Center(
                     child: Container(
                       padding: EdgeInsets.fromLTRB(5, 5, 5, 10),
@@ -75,6 +74,49 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
                                     color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(top: 8),
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Exemplos:",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey[700],
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "- Caso sua função receba o inteiro 10, ela deve retornar 23, resultante do somatório dos números 3, 5, 6 e 9 que são menores que 10.",
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey[500],
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 350,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "- Caso sua função receba o inteiro 11, ela deve retornar 33, resultante do somatório dos números 3, 5, 6, 9 e 10 que são menores que 11.",
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.lato(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey[500],
+                                    fontStyle: FontStyle.italic,
                                   ),
                                 ),
                               ),
@@ -222,7 +264,7 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                           child: Container(
-                            width: 120,
+                            width: 160,
                             child: Column(
                               children: [
                                 Form(
