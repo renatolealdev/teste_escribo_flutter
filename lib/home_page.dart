@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                       child: Wrap(
                         children: [
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 padding: EdgeInsets.fromLTRB(0, 2, 0, 2),
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                       width: 320,
-                      height: 160,
+                      height: 120,
                       decoration: BoxDecoration(
                         color: Colors.grey[400],
                         borderRadius: BorderRadius.circular(10),
@@ -177,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Container(
                             alignment: Alignment.bottomCenter,
-                            height: 100,
+                            height: 60,
                             margin: EdgeInsets.fromLTRB(12, 10, 12, 0),
                             decoration: BoxDecoration(
                               color: Colors.grey[800],
