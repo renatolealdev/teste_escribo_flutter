@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Center(
                     child: Container(
                       padding: EdgeInsets.fromLTRB(5, 5, 5, 10),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Text(
                                   "Aplicativo Web: SomaModulo3e5",
                                   style: GoogleFonts.lato(
-                                    fontSize: 18,
+                                    fontSize: 17,
                                     fontWeight: FontWeight.w900,
                                     color: Colors.black,
                                   ),
