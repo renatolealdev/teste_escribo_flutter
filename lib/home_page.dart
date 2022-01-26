@@ -24,11 +24,10 @@ class HomePage extends StatelessWidget {
                   flex: 1,
                   child: Center(
                     child: Container(
+                      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                       alignment: Alignment.topCenter,
-                      width: 280,
-                      height: 100,
-                      color: Colors.white,
-                      child: SvgPicture.asset("logo_RenatoLeal.svg"),
+                      width: 150,
+                      child: Image.asset("logo_RenatoLeal.png"),
                     ),
                   ),
                 ),
@@ -90,8 +89,8 @@ class HomePage extends StatelessWidget {
                       Center(
                         child: Container(
                           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                          width: 80,
-                          height: 80,
+                          width: 100,
+                          height: 50,
                           child: FormNumber(),
                         ),
                       ),
