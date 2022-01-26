@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'controller/receive_number_and_check.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -191,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: Center(
                               child: Text(
-                                numInformated,
+                                result,
                                 style: GoogleFonts.robotoMono(
                                   color: Colors.white70,
                                   fontSize: 35,
@@ -229,8 +231,6 @@ class _HomePageState extends State<HomePage> {
                                     validator: (value) {
                                       if (value!.isEmpty)
                                         return "O campo está vazio!";
-                                      if (value.length < 2)
-                                        return "Digite pelo menos 2 números";
                                       return null;
                                     },
                                     onChanged: (value) => numInformated = value,
@@ -255,7 +255,14 @@ class _HomePageState extends State<HomePage> {
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.black87,
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      if (_formKey.currentState!.validate()) {
+                                        setState(() {
+                                          return result = receiveNumberAndCheck(
+                                              numInfo: numInformated);
+                                        });
+                                      }
+                                    },
                                     child: Container(
                                       padding:
                                           EdgeInsets.fromLTRB(12, 10, 12, 10),
