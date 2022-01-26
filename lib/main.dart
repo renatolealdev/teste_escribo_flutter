@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:teste_escribo/home_page.dart';
 
 void main() {
+  SystemChannels.textInput.invokeMethod('TextInput.hide');
   runApp(const MyHomePage());
 }
 
