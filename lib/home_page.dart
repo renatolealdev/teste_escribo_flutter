@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 child: Text(
                                   "Aplicativo Web: SomaModulo3e5",
+                                  textAlign: TextAlign.center,
                                   style: GoogleFonts.lato(
                                     fontSize: 17,
                                     fontWeight: FontWeight.w900,
