@@ -161,23 +161,46 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                      child: Center(
-                        child: Container(
-                          color: Colors.black87,
-                          margin: EdgeInsets.all(12),
-                          child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            alignment: Alignment.bottomCenter,
                             child: Text(
-                              "0123456789",
-                              style: GoogleFonts.robotoMono(
-                                color: Colors.white70,
-                                fontSize: 35,
-                                textStyle:
-                                    Theme.of(context).textTheme.headline2,
-                                fontWeight: FontWeight.w600,
+                              "Resultado: ",
+                              style: GoogleFonts.lato(
+                                fontSize: 18,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w900,
                               ),
                             ),
                           ),
-                        ),
+                          Container(
+                            alignment: Alignment.bottomCenter,
+                            height: 100,
+                            margin: EdgeInsets.fromLTRB(12, 10, 12, 0),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[800],
+                              border: Border.all(
+                                color: Colors.black,
+                                width: 2.0,
+                                style: BorderStyle.solid,
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                numInformated,
+                                style: GoogleFonts.robotoMono(
+                                  color: Colors.white70,
+                                  fontSize: 35,
+                                  textStyle:
+                                      Theme.of(context).textTheme.headline2,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
