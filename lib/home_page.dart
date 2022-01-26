@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         body: ListView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           children: [
             Container(
               height: 650,
