@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        backgroundColor: Colors.grey[300],
         body: ListView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           children: [
@@ -188,16 +189,16 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(4, 4),
+                            offset: Offset(5, 5),
                             color: Colors.grey.shade500,
-                            blurRadius: 15,
-                            spreadRadius: 1,
+                            blurRadius: 10,
+                            spreadRadius: 0.5,
                           ),
                           BoxShadow(
-                            offset: Offset(-4, -4),
+                            offset: Offset(-5, -5),
                             color: Colors.white,
-                            blurRadius: 15,
-                            spreadRadius: 1,
+                            blurRadius: 10,
+                            spreadRadius: 0.5,
                           ),
                         ],
                       ),
@@ -254,12 +255,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Center(
                         child: Container(
-                          child: Row(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                width: 150,
+                                width: 200,
                                 child: Form(
                                   key: _formKey,
                                   child: TextFormField(
@@ -286,9 +286,8 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 10),
-                                padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
-                                child: ElevatedButton(
+                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                child: ElevatedButton.icon(
                                   style: ElevatedButton.styleFrom(
                                     primary: Colors.black87,
                                   ),
@@ -300,13 +299,21 @@ class _HomePageState extends State<HomePage> {
                                       });
                                     }
                                   },
-                                  child: Container(
-                                    padding:
-                                        EdgeInsets.fromLTRB(12, 10, 12, 10),
+                                  icon: Container(
+                                    padding: EdgeInsets.fromLTRB(15, 12, 0, 12),
+                                    child: Icon(
+                                      Icons.calculate_rounded,
+                                      size: 25,
+                                      color: Colors.blue[700],
+                                    ),
+                                  ),
+                                  label: Container(
+                                    padding: EdgeInsets.fromLTRB(0, 12, 15, 12),
                                     child: Text(
-                                      "Calcular",
+                                      "Calcular".toUpperCase(),
                                       style: GoogleFonts.lato(
-                                          color: Colors.white70),
+                                          color: Colors.blue[700],
+                                          fontWeight: FontWeight.w900),
                                     ),
                                   ),
                                 ),
