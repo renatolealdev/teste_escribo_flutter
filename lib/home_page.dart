@@ -16,21 +16,22 @@ class _HomePageState extends State<HomePage> {
   String result = "";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Container(
-            color: Colors.grey[300],
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Center(
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        backgroundColor: Colors.grey[300],
+        body: ListView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          children: [
+            Container(
+              height: 650,
+              color: Colors.grey[300],
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Center(
                     child: Container(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                       alignment: Alignment.topCenter,
@@ -38,10 +39,7 @@ class _HomePageState extends State<HomePage> {
                       child: Image.asset("logo_RenatoLeal.png"),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 4,
-                  child: Center(
+                  Center(
                     child: Container(
                       padding: EdgeInsets.fromLTRB(5, 5, 5, 10),
                       alignment: Alignment.topCenter,
@@ -181,10 +179,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Center(
+                  Center(
                     child: Container(
                       margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                       width: 320,
@@ -194,16 +189,16 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(4, 4),
+                            offset: Offset(5, 5),
                             color: Colors.grey.shade500,
-                            blurRadius: 15,
-                            spreadRadius: 1,
+                            blurRadius: 10,
+                            spreadRadius: 0.5,
                           ),
                           BoxShadow(
-                            offset: Offset(-4, -4),
+                            offset: Offset(-5, -5),
                             color: Colors.white,
-                            blurRadius: 15,
-                            spreadRadius: 1,
+                            blurRadius: 10,
+                            spreadRadius: 0.5,
                           ),
                         ],
                       ),
@@ -250,24 +245,22 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
+                  Column(
                     children: [
                       Center(
                         child: Container(
+                          margin: EdgeInsets.only(bottom: 8),
                           child: Text("Digite um número entre 0 e 999"),
                         ),
                       ),
                       Center(
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                          child: Container(
-                            width: 160,
-                            child: Column(
-                              children: [
-                                Form(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 200,
+                                child: Form(
                                   key: _formKey,
                                   child: TextFormField(
                                     validator: (value) {
@@ -276,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                                       return null;
                                     },
                                     onChanged: (value) => numInformated = value,
-                                    autofocus: true,
+                                    autofocus: false,
                                     decoration: InputDecoration(
                                       filled: true,
                                       fillColor: Colors.white38,
@@ -291,42 +284,50 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.black87,
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                child: ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.black87,
+                                  ),
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      setState(() {
+                                        return result = receiveNumberAndCheck(
+                                            numInfo: numInformated);
+                                      });
+                                    }
+                                  },
+                                  icon: Container(
+                                    padding: EdgeInsets.fromLTRB(15, 12, 0, 12),
+                                    child: Icon(
+                                      Icons.calculate_rounded,
+                                      size: 25,
+                                      color: Colors.blue[700],
                                     ),
-                                    onPressed: () {
-                                      if (_formKey.currentState!.validate()) {
-                                        setState(() {
-                                          return result = receiveNumberAndCheck(
-                                              numInfo: numInformated);
-                                        });
-                                      }
-                                    },
-                                    child: Container(
-                                      padding:
-                                          EdgeInsets.fromLTRB(12, 10, 12, 10),
-                                      child: Text(
-                                        "Calcular",
-                                        style: GoogleFonts.lato(
-                                            color: Colors.white70),
-                                      ),
+                                  ),
+                                  label: Container(
+                                    padding: EdgeInsets.fromLTRB(0, 12, 15, 12),
+                                    child: Text(
+                                      "Calcular".toUpperCase(),
+                                      style: GoogleFonts.lato(
+                                          color: Colors.blue[700],
+                                          fontWeight: FontWeight.w900),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
