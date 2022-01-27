@@ -272,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                                     autofocus: false,
                                     decoration: InputDecoration(
                                       filled: true,
-                                      fillColor: Colors.white38,
+                                      fillColor: Colors.white54,
                                       border: OutlineInputBorder(),
                                       hintText: "Ex: 10",
                                       hintStyle: TextStyle(fontSize: 13),
